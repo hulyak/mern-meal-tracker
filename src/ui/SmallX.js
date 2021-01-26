@@ -7,3 +7,4 @@ export const SmallX = ({ onClick }) => (
     </span>
   </div>
 );
+
