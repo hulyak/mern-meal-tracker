@@ -11,19 +11,29 @@ export const HomePage = () => {
     setIngredients,
   } = useIngredients();
   // console.log(ingredients);
+
+  // make a delete request for the server endpoint
+  const onDeleteMeal = async (id) => {
+    const response = await fetch(`/meals/${id}`, { method: 'DELETE' });
+    const updatedMeals = await response.json();
+    setMeals(updatedMeals)
+  };
+
   return (
     <div className="page-container">
       <div className="column">
-        <MealsList isLoading={isLoadingMeals} meals={meals} />
+        <MealsList isLoading={isLoadingMeals} meals={meals} onDelete={onDeleteMeal} />
       </div>
       <div className="column">
-        <IngredientsList isLoading={isLoadingIngredients} ingredients={ingredients} />
+        <IngredientsList
+          isLoading={isLoadingIngredients}
+          ingredients={ingredients}
+        />
         <Link to="/shopping-list">
-           <button className="shopping-list-button list-container full-width">
-          Generate Shopping List
-        </button>
+          <button className="shopping-list-button list-container full-width">
+            Generate Shopping List
+          </button>
         </Link>
-       
       </div>
     </div>
   );
