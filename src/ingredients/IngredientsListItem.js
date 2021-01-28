@@ -1,7 +1,7 @@
 import React from 'react';
 import { SmallX } from '../ui';
 
-export const IngredientsListItem = ({ ingredient }) => {
+export const IngredientsListItem = ({ ingredient, onDelete }) => {
   return (
     <div className="list-item">
       <h3>{ingredient.name}</h3>
@@ -9,7 +9,7 @@ export const IngredientsListItem = ({ ingredient }) => {
         {ingredient.amount} {ingredient.units}{' '}
       </p>
       <div className="right-action">
-        <SmallX />
+        <SmallX onClick={() => onDelete(ingredient.name)} />
       </div>
     </div>
   );
