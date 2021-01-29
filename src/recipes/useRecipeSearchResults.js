@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const useRecipeSearchResults = ({ searchString }) => {
+export const useRecipeSearchResults = (searchString ) => {
   const [isLoading, setIsLoading] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
 
@@ -14,9 +14,9 @@ export const useRecipeSearchResults = ({ searchString }) => {
       setIsLoading(false);
     };
 
-    if (searchString) {
+    // if (searchString) {
       loadSearchResults();
-    }
+    // }
   }, [searchString]);
 
   return { isLoading, searchResults };
