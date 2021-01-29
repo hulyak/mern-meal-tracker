@@ -5,12 +5,12 @@ import { RecipeSearchResultsList } from './RecipeSearchResultsList';
 import { useRecipeSearchResults } from './useRecipeSearchResults';
 
 export const RecipeSearchPage = () => {
-  const [searchInputValue, setSearchInputValue] = useState('');
   const [searchString, setSearchString] = useState('');
+  const [searchInputValue, setSearchInputValue] = useState('');
   const { ingredients } = useIngredients();
   const { searchResults } = useRecipeSearchResults(searchString);
 
-  console.log(searchResults);
+//   console.log(searchResults);
 
   const onSearchClicked = () => {
     setSearchString(searchInputValue);

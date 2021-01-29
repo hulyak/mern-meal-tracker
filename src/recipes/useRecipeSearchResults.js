@@ -7,14 +7,17 @@ export const useRecipeSearchResults = ({ searchString }) => {
   useEffect(() => {
     setIsLoading(true);
     const loadSearchResults = async () => {
-      // add a query parameter to the url, get request 
+      // add a query parameter to the url, get request
       const response = await fetch(`/recipes?search=${searchString}`);
       const results = await response.json();
       setSearchResults(results);
       setIsLoading(false);
     };
-    loadSearchResults();
+
+    if (searchString) {
+      loadSearchResults();
+    }
   }, [searchString]);
-  
-  return { isLoading, searchResults};
+
+  return { isLoading, searchResults };
 };

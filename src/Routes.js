@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { HomePage}  from './home';
-import { AddIngredientPage }  from './ingredients';
+import { HomePage } from './home';
+import { AddIngredientPage } from './ingredients';
 import { RecipeSearchPage } from './recipes';
-import { ShoppingListPage }  from './shopping-list';
+import { ShoppingListPage } from './shopping-list';
 
 const routes = [
   {
@@ -12,12 +12,12 @@ const routes = [
     exact: true,
   },
   {
-    path: '/add-ingredient',
-    Component: AddIngredientPage,
+    path: '/recipes',
+    Component: RecipeSearchPage,
   },
   {
-    path: '/recipe-search',
-    Component: RecipeSearchPage,
+    path: '/add-ingredient',
+    Component: AddIngredientPage,
   },
   {
     path: '/shopping-list',

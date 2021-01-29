@@ -15,7 +15,7 @@ export const MealsListItem = ({ meal, date, onDelete }) => (
     ) : (
       <>
         <h3>{date.getDate()}</h3>
-        <p>No meals planned for today.</p>
+        <p>No meal planned</p>
         <div className="right-action">
           <Link to={`/recipes?date=${date.toString()}`}>
             <button>Add</button>
