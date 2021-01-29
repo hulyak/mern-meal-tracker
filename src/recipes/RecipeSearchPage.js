@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useIngredients } from '../ingredients';
 import { BackButton } from '../ui';
+import { RecipeSearchResultsList } from './RecipeSearchResultsList';
 import { useRecipeSearchResults } from './useRecipeSearchResults';
-
 
 export const RecipeSearchPage = () => {
   const [searchInputValue, setSearchInputValue] = useState('');
@@ -31,6 +31,7 @@ export const RecipeSearchPage = () => {
         <button className="full-width space-after" onClick={onSearchClicked}>
           Search
         </button>
+        <RecipeSearchResultsList recipes={searchResults} ingredients={ingredients} />
       </div>
     </div>
   );

@@ -3,9 +3,9 @@ import { MealsListItem } from './MealsListItem';
 
 const next7Days = Array(7)
   .fill()
-  .map((_, id) => {
+  .map((_, i) => {
     const date = new Date();
-    date.setDate(date.getDate() + id);
+    date.setDate(date.getDate() + i);
     return date;
   });
 
